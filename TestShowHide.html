@@ -1,0 +1,283 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Reminder</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script type="text/javascript">
+jQuery(document).ready(function() {
+  $('.active').show();
+  $('.sent').hide();
+  $('.deleted').hide();
+$('#active_check').click(function () {
+    if ($('#active_check').attr('checked')) {
+        $('.active').show();
+    }
+    else {
+        $('.active').hide();
+    }
+});
+$('#deleted_check').click(function () {
+    if ($('#deleted_check').attr('checked')) {
+        $('.deleted').show();
+    }
+    else {
+        $('.deleted').hide();
+    }
+});
+$('#sent_check').click(function () {
+    if ($('#sent_check').attr('checked')) {
+        $('.sent').show();
+    }
+    else {
+        $('.sent').hide();
+    }
+});
+});
+</script>
+</head>
+<body>
+  <table>
+   	<tr><td>
+	<input type="checkbox" name="active_check" value="active_check" id="active_check" checked>Show/hide Active &nbsp;&nbsp;
+	<input type="checkbox" name="sent_check" value="sent_check" id="sent_check">Show/hide Sent &nbsp;&nbsp;
+	<input type="checkbox" name="deleted_check" value="deleted_check" id="deleted_check">Show/hide Deleted &nbsp;&nbsp;
+	</tr>
+    </table>
+	<br>
+	<table border="1" cellpadding="5" cellspacing="0">
+		<thead> 
+		<tr id="table_head">
+		<th>col</th>
+		<th>col2</th>
+		<th>col3</th>
+		<th>col4</th>
+		<th>col5</th>
+		<th>col6</th> 		
+		</tr>
+</thead>
+<tbody>
+
+<tr class="sent">
+
+<td>1</td>
+<td><img src="images/sent_reminder.png" alt="Sent" title="Sent"></td>
+<td>Pradeep Pant</td>
+<td>15/03/2016</td>
+<td>           14/03/2016 08:14  </td>
+<td>New manual reminder</td>
+</tr>
+
+<tr class="sent">
+
+<td>
+2
+</td>
+<td><img src="images/sent_reminder.png" alt="Sent" title="Sent"></td>
+<td>Pradeep Pant</td>
+<td>16/03/2016</td>
+<td>           14/03/2016 09:32  </td>
+<td>Recur daily .. reminder should go daily for this document</td>
+</tr>
+
+<tr class="sent">
+
+<td>
+3
+</td>
+<td><img src="images/sent_reminder.png" alt="Sent" title="Sent"></td>
+<td>Pradeep Pant</td>
+<td>17/03/2016</td>
+<td>           14/03/2016 09:32  </td>
+<td>Recur daily .. reminder should go daily for this document</td>
+
+</tr>
+
+<tr class="sent">
+
+<td>
+4
+</td>
+<td><img src="images/sent_reminder.png" alt="Sent" title="Sent"></td>
+<td>Pradeep Pant</td>
+<td>18/03/2016</td>
+<td>           16/03/2016 01:08  </td>
+<td>End after 3 occur daily reminder</td>
+
+</tr>
+
+<tr class="sent">
+
+<td>5</td>
+<td><img src="images/sent_reminder.png" alt="Sent" title="Sent"></td>
+<td>Pradeep Pant</td>
+<td>19/03/2016</td>
+<td>           16/03/2016 01:09  </td>
+<td>Another manual reminder</td>
+
+</tr>
+
+<tr class="deleted">
+
+<td>
+6
+</td>
+<td><img src="images/deleted_reminder.png" alt="Deleted" title="Deleted">
+</td>
+<td>Pradeep Pant</td>
+<td>20/03/2016</td>
+<td>           20/03/2016 00:03  </td>
+<td>every day reminder</td>
+
+</tr>
+
+<tr class="deleted">
+
+<td>
+7
+</td>
+<td><img src="images/deleted_reminder.png" alt="Deleted" title="Deleted">
+</td>
+<td>Pradeep Pant</td>
+<td>21/03/2016</td>
+<td>           20/03/2016 00:03  </td>
+<td>every day reminder</td>
+
+</tr>
+
+<tr class="deleted">
+
+<td>
+8
+</td>
+<td><img src="images/deleted_reminder.png" alt="Deleted" title="Deleted">
+</td>
+<td>Pradeep Pant</td>
+<td>22/03/2016</td>
+<td>           20/03/2016 00:03  </td>
+<td>every day reminder</td>
+
+</tr>
+
+<tr class="deleted">
+
+<td>
+9
+</td>
+<td><img src="images/deleted_reminder.png" alt="Deleted" title="Deleted">
+</td>
+<td>Pradeep Pant</td>
+<td>23/03/2016</td>
+<td>           20/03/2016 00:03  </td>
+<td>every day reminder</td>
+
+</tr>
+
+<tr class="deleted">
+
+<td>
+10
+</td>
+<td><img src="images/deleted_reminder.png" alt="Deleted" title="Deleted">
+</td>
+<td>Pradeep Pant</td>
+<td>24/03/2016</td>
+<td>           20/03/2016 00:03  </td>
+<td>every day reminder</td>
+
+</tr>
+
+<tr class="deleted">
+
+<td>
+11
+</td>
+<td><img src="images/deleted_reminder.png" alt="Deleted" title="Deleted">
+</td>
+<td>Pradeep Pant</td>
+<td>25/03/2016</td>
+<td>           20/03/2016 00:03  </td>
+<td>every day reminder</td>
+
+</tr>
+
+<tr class="active">
+
+<td>
+12
+</td>
+<td><img src="images/active_reminder.png" alt="Active" title="Active"></td>
+<td>Pradeep Pant</td>
+<!-- We need to check if edit reminder button is clicked if so we need to enable the edit fields functionality .. add a calender for inserting new remind date and enable text box for adding/editing commnents-->
+<!--<td><div id="edit_reminder">26/03/2016</div></td> -->
+
+<td>
+	  <input name="11_history_remind_date" id="11_history_remind_date" value="26/03/2016" disabled>
+	  <input id="remind_date_value" type="hidden"></td>
+<td>           16/03/2016 01:14  </td>
+<td><textarea name="11_history_remind_comment" id="11_history_remind_comment" rows="1" cols="45" disabled>Manual reminder again</textarea></td>
+
+
+</tr>
+
+<tr class="active">
+
+<td>
+
+13
+
+</td>
+<td><img src="images/active_reminder.png" alt="Active" title="Active"></td>
+<td>Pradeep Pant</td>
+<!-- We need to check if edit reminder button is clicked if so we need to enable the edit fields functionality .. add a calender for inserting new remind date and enable text box for adding/editing commnents-->
+<!--<td><div id="edit_reminder">29/03/2016</div></td> -->
+
+<td>
+	  <input name="12_history_remind_date" id="12_history_remind_date" value="29/03/2016" disabled>
+	  <input id="remind_date_value" type="hidden"></td>
+<td>           20/03/2016 00:06  </td>
+<td><textarea name="12_history_remind_comment" id="12_history_remind_comment" rows="1" cols="45" disabled>every weekday changing rule again.. all the reminders old existing rule are active so changing rule should delete rule and data completely</textarea></td>
+
+
+</tr>
+
+<tr class="active">
+
+<td>
+14
+
+
+</td>
+<td><img src="images/active_reminder.png" alt="Active" title="Active"></td>
+<td>Pradeep Pant</td>
+<!-- We need to check if edit reminder button is clicked if so we need to enable the edit fields functionality .. add a calender for inserting new remind date and enable text box for adding/editing commnents-->
+<!--<td><div id="edit_reminder">30/03/2016</div></td> -->
+
+<td>
+	  <input name="13_history_remind_date" id="13_history_remind_date" value="30/03/2016" disabled>
+	  <input id="remind_date_value" type="hidden"></td>
+<td>           20/03/2016 00:06  </td>
+<td><textarea name="13_history_remind_comment" id="13_history_remind_comment" rows="1" cols="45" disabled>every weekday changing rule again.. all the reminders old existing rule are active so changing rule should delete rule and data completely</textarea></td>
+
+
+</tr>
+
+<tr class="active">
+
+<td>
+15
+</td>
+<td><img src="images/active_reminder.png" alt="Active" title="Active"></td>
+<td>Pradeep Pant</td>
+<td>
+	  <input name="14_history_remind_date" id="14_history_remind_date" value="31/03/2016" disabled>
+	  <input id="remind_date_value" type="hidden"></td>
+<td>           20/03/2016 00:06  </td>
+<td><textarea name="14_history_remind_comment" id="14_history_remind_comment" rows="1" cols="45" disabled>every weekday changing rule again.. all the reminders old existing rule are active so changing rule should delete rule and data completely</textarea></td>
+
+
+</tr>
+</tbody>
+</table>
+</body>
+</html>
