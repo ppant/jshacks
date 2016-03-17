@@ -1,30 +1,30 @@
 <script type="text/javascript">
 jQuery(document).ready(function() {
-  $('.webiso_ui_remind_history_active').show();
-  $('.webiso_ui_remind_history_sent').hide();
-  $('.webiso_ui_remind_history_deleted').hide();
-$('#active_reminder_check').click(function () {
-    if ($('#active_reminder_check').attr('checked')) {
-        $('.webiso_ui_remind_history_active').show();
+  $('.active').show();
+  $('.sent').hide();
+  $('.deleted').hide();
+$('#active_check').click(function () {
+    if ($('#active_check').attr('checked')) {
+        $('.active').show();
     }
     else {
-        $('.webiso_ui_remind_history_active').hide();
+        $('.active').hide();
     }
 });
-$('#deleted_reminder_check').click(function () {
-    if ($('#deleted_reminder_check').attr('checked')) {
-        $('.webiso_ui_remind_history_deleted').show();
+$('#deleted_check').click(function () {
+    if ($('#deleted_check').attr('checked')) {
+        $('.deleted').show();
     }
     else {
-        $('.webiso_ui_remind_history_deleted').hide();
+        $('.deleted').hide();
     }
 });
-$('#sent_reminder_check').click(function () {
-    if ($('#sent_reminder_check').attr('checked')) {
-        $('.webiso_ui_remind_history_sent').show();
+$('#sent_check').click(function () {
+    if ($('#sent_check').attr('checked')) {
+        $('.sent').show();
     }
     else {
-        $('.webiso_ui_remind_history_sent').hide();
+        $('.sent').hide();
     }
 });
 });
