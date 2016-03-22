@@ -1,3 +1,4 @@
+//jQuery code for show/hide 
 <script type="text/javascript">
 jQuery(document).ready(function() {
   $('.active').show();
