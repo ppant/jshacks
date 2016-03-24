@@ -1,8 +1,7 @@
 //jQuery code for show/hide 
-<script type="text/javascript">
 jQuery(document).ready(function() {
-  $('.active').show();
-  $('.sent').hide();
+   $('.active').show();
+   $('.sent').hide();
   $('.deleted').hide();
 $('#active_check').click(function () {
     if ($('#active_check').attr('checked')) {
@@ -29,4 +28,3 @@ $('#sent_check').click(function () {
     }
 });
 });
-</script>
