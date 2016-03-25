@@ -1,0 +1,50 @@
+/* General css  */
+* {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+}
+h3 {
+	font-size:12pt;
+}
+body {
+background-color: #e2dbc5;
+}
+
+/* Border setting for images */
+#tdborder {
+	border: 0px; 
+	border-collapse: collapse;   
+}
+#table_head {
+	background-color: #CCCCCC;
+    text-align: left; 
+	border: 5px solid black;
+}
+.active {
+background-color: #F6F9ED;
+width:100%;
+padding: 5px; 
+vertical-align: top;
+text-align: left;
+border-collapse: collapse;
+}
+.sent {
+background-color: #F6F9ED;
+width:100%;
+padding: 5px; 
+vertical-align: top;
+text-align: left;
+border-collapse: collapse;
+}
+.deleted {
+background-color: #F6F9ED;
+width:100%;
+padding: 5px; 
+vertical-align: top;
+text-align: left;
+border-collapse: collapse;
+}
+input { 
+height:15px;
+width:30px;
+}
