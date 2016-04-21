@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script>
+// Sync multiple drop down list of remind date and comments
+jQuery(document).ready(function() {
+	var remind_dates_ids = [];
+	var remind_comment_ids = [];
+	$( ".active_remind_dates" ).each(function() {
+  remind_dates_ids.push(this.id);
+  });
+	$( ".comment_of_active_remind_dates" ).each(function() {
+  remind_comment_ids.push(this.id);
+  });
+	jQuery.each(remind_dates_ids, function(i,item) {
+    var remComment = remind_comment_ids[i];
+	var remDate = item;
+	$("#" +remDate).change(function(){
+	$("#" +remComment).val( this.value );
+		});
+	});
+	jQuery.each(remind_comment_ids, function(i,item) {
+		var remComment = item;
+		var remDate = remind_dates_ids[i];
+		$("#" +remComment).change(function(){
+		$("#" +remDate).val( this.value );
+		});
+	});
+});
+</script>
+<!--  end jquery code   -->
+<title>Demo</title>
+</head>
+<body>
+<div>
+<table id="myTable">
+<th>List 1</th>
+<th>List 2</th>
+	<tr>
+	<td>
+	<select name="remind_dates" class="active_remind_dates" id="active_remind_dates_node-0">
+	
+		<option value="1">23/04/2016</option>
+	
+		<option value="2">24/04/2016</option>
+	
+		<option value="3">25/04/2016</option>
+	
+		<option value="4">26/04/2016</option>
+	
+		<option value="5">27/04/2016</option>
+	
+		<option value="6">28/04/2016</option>
+	
+		<option value="7">29/04/2016</option>
+	
+		<option value="8">01/06/2016</option>
+	
+	</select>	
+	</td>
+	<td>
+	<select name="comment_on_remind_dates" class="comment_of_active_remind_dates" id="comment_of_active_remind_dates_node-0">
+	
+		<option value="1" title="Recur daily">Recur daily first day</option>
+	
+		<option value="2" title="Recur daily">Recur daily second day</option>
+	
+		<option value="3" title="Recur daily">Recur daily third day</option>
+	
+		<option value="4" title="Recur daily">Recur daily fourth day</option>
+	
+		<option value="5" title="Recur daily">Recur daily fifth</option>
+	
+		<option value="6" title="Recur daily">Recur daily sixth</option>
+	
+		<option value="7" title="Recur daily">Recur daily</option>
+	
+		<option value="8" title="new manual reminder">new manual reminder</option>
+	
+	</select>	
+	</td>
+	</tr>
+	<tr>
+	<td>
+	<select name="remind_dates" class="active_remind_dates" id="active_remind_dates_node-1">
+	
+		<option value="1">01/05/2016</option>
+	
+		<option value="2">11/08/2016</option>
+	
+		<option value="3">01/05/2017</option>
+	
+		<option value="4">01/05/2018</option>
+	
+	</select>	
+	</td>
+	<td>
+	<select name="comment_on_remind_dates" class="comment_of_active_remind_dates" id="comment_of_active_remind_dates_node-1">
+		<option value="1" title="Recur yearly">Recur yearly</option>
+	
+		<option value="2" title="reminder to test drop down">reminder to test drop down</option>
+	
+		<option value="3" title="Recur yearly">Recur yearly first </option>
+	
+		<option value="4" title="Recur yearly">Recur yearly second</option>
+	
+	</select>	
+	</td>
+	</tr>
+	<tr>
+	 <td>
+	<select name="remind_dates" class="active_remind_dates" id="active_remind_dates_node-2">
+	
+		<option value="1">17/04/2016</option>
+	
+		<option value="2">20/04/2016</option>
+	
+		<option value="3">21/04/2016</option>
+	
+		<option value="4">22/04/2016</option>
+	
+		<option value="5">25/04/2016</option>
+	
+		<option value="6">26/04/2016</option>
+	
+		<option value="7">27/04/2016</option>
+	
+		<option value="8">28/04/2016</option>
+	
+		<option value="9">29/04/2016</option>
+	
+		<option value="10">30/04/2016</option>
+	</select>	
+	</td>
+	<td>
+		
+	<select name="comment_on_remind_dates" class="comment_of_active_remind_dates" id="comment_of_active_remind_dates_node-2">
+	
+		<option value="1" title="Every 3 days ">Every 3 days  first</option>
+	
+		<option value="2" title="Every 3 days ">Every 3 days second</option>
+	
+		<option value="3" title="Every weekday">Every weekday third</option>
+	
+		<option value="4" title="Every weekday">Every weekday fourth</option>
+	
+		<option value="5" title="Every weekday">Every weekday fifth</option>
+	
+		<option value="6" title="Every weekday">Every weekday sixth</option>
+	
+		<option value="7" title="Every weekday">Every weekday seventh/option>
+	
+		<option value="8" title="Every weekday">Every weekday eighth</option>
+	
+		<option value="9" title="Every weekday">Every weekday nineth</option>
+	
+		<option value="10" title="Every 3 weeks all days">Every 3 weeks all days</option>
+	
+	</select>	
+	
+	</td>
+	</tr>
+	
+</table>
+</div>
+
+    </div>
+</body>
+</html>
