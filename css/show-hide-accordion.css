@@ -1,0 +1,50 @@
+.menu_accordion {
+  background-color: #2A3F54;
+  color: #fff;
+  cursor: pointer;
+  padding: 10px 10px 10px 15px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 13px;
+  transition: 0.4s;
+}
+.menu_accordion:hover {
+	background-color: rgb(115,135,156);
+	color: #fff;
+}
+.menu_accordion:after {
+  content: '\002B';
+  color: #fff;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+.menu_accordion i,
+.menu_panel_button {
+	margin-right: 5px;
+}
+.menu_panel {
+  padding: 0;
+  background-color: #fff;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+.menu_panel_button {
+    width: 100%;
+    color: white;
+    text-decoration: none;
+    text-align: left;
+    font-size: 13px;
+    transition: 0.4s;
+    cursor: pointer;
+    display: inline-block;
+    padding: 7px 0 7px 30px;
+    border-left: 5px solid white;
+    background: rgb(115,135,156);
+}
+.menu_panel_button:hover {
+	border-left: 5px solid rgb(115,135,156);
+}
