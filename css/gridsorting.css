@@ -1,0 +1,18 @@
+.header {
+	background-image: url(/projects/webiso/html/NL/dbot/images/small.gif);
+	background-repeat: no-repeat;
+	/* background-position: center right; */
+	background-position: center right;
+}
+.headerSortUp {
+	background-image: url(/projects/webiso/html/NL/dbot/images/up.gif);
+	background-repeat: no-repeat;
+	background-position: center right;
+	
+}
+.headerSortDown {
+	background-image: url(/projects/webiso/html/NL/dbot/images/down.gif);
+	background-repeat: no-repeat;
+	background-position: center right;
+
+}

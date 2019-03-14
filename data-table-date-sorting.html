@@ -1,0 +1,78 @@
+<html>
+<head>
+<title>Employee joining data</title>
+<link rel="stylesheet" type="text/css" href="css/dataTable_sorting_on_date.css">
+<link rel="stylesheet" type="text/css" href="css/jquery.dataTables.min.css">
+
+<!-- JS -->
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jquery.ui.js"></script>
+<script type="text/javascript" src="js/jquery.dataTables_1_10.js"></script>
+<script type="text/javascript" src="js/moment.min.js"></script> 
+<script type="text/javascript" src="js/datetime-moment.js"></script>
+<script type="text/javascript" src="js/jquery.ui.core.js"></script> 
+<script type="text/javascript" src="js/jquery.ui.datepicker.js"></script>  
+<script type="text/javascript">
+</script>
+<script type="text/javascript">
+jQuery(document).ready(function() {
+$.fn.dataTableExt.oPagination.iFullNumbersShowPages = 3;
+$.fn.dataTable.moment('DD/MM/YYYY');
+		$("#myTable1").DataTable({	
+		"autoWidth": false,
+		"destroy": true,
+		"order": [[2, 'desc']],
+		"pageLength": 15,
+		"lengthMenu": [ [10, 25, 50, -1], [10, 25, 50, "All"] ],
+		"pagingType": "full_numbers"
+});
+});	
+</script>
+</head>
+<body>
+<h3 class="ui_title">Employee joining data</h3>
+<div class="ui_block">
+<table id="myTable1" class="ui_table">
+<thead id="table_head">
+<tr>
+<th style="width:150px;">Name</th>
+<th style="width:50px;">Designation</th>
+<th>Joining date</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>Ram</td>	
+	<td>Engineer</td>
+	<td>18/10/2015</td>	
+</tr>
+<tr>
+	<td>Shyam</td>	
+	<td>Engineer</td>
+	<td>05/01/2012</td>	
+</tr>
+<tr>
+	<td>Suresh</td>	
+	<td>Sr. Engineer</td>
+	<td>22/06/2010</td>	
+</tr>
+<tr>
+	<td>Ahmed</td>	
+	<td>Manager</td>
+	<td>02/02/2002</td>	
+</tr>
+<tr>
+	<td>Leena</td>	
+	<td>Sr. Manager</td>
+	<td>01/01/2018</td>	
+</tr>
+<tr>
+	<td>Pradeep</td>	
+	<td>Architect</td>
+	<td>21/05/2012</td>	
+</tr>
+</tbody>
+</table>
+</div>
+</body>
+</html>
