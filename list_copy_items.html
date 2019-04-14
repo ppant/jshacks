@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script type="text/javascript">
+jQuery(document).ready(function() {
+// Add group to selected groups
+$('#groupAddBtn').click(function() { 
+var options = $("select#groups option:selected").clone();
+if (options.length == 0) {
+return alert("Please select one or more users to add");
+}
+var options_selected = $("select#groups_selected option:selected").clone();
+// Initialize an array to hold the newly selected users and already selected users
+var groups_newly_selected = [];
+var groups_already_selected = [];
+//Fetch full group list
+var groups_all = document.getElementById('groups');
+var len_groups_already_selected = document.getElementById('groups_selected').options.length;
+// Loop through all the groups and check for selected groups on UI and store them in a array
+for (var i = 0; i < groups_all.length; i++) {
+	if (groups_all.options[i].selected) {
+	groups_newly_selected.push(groups_all.options[i].value);	
+	}	
+}
+// Loop through already selected group list and store them in an array
+for (var i = 0; i < len_groups_already_selected; i++) {
+	var group_already_selected_text = document.getElementById('groups_selected').options[i].value;	
+	groups_already_selected.push(group_already_selected_text);	
+}
+var groups_already_exists_list = [];
+var groups_already_exists_list_print = [];
+// list of groups which are already in selected list we should not copy them in selected list
+// Logic to support IE 11 because of crash as => and included are not supported
+//groups_already_exists_list = groups_newly_selected.filter((n) => groups_already_selected.includes(n)); 
+groups_already_exists_list = groups_newly_selected.filter(function(n) { return groups_already_selected.indexOf(n) >=0});
+//End of alternate logic to support IE11
+// warn user
+if (groups_already_exists_list.length != 0) {
+var txt;
+var re = /(\d+)\s(\w+)/; 
+for (var i = 0; i < groups_already_exists_list.length; i++){
+txt = groups_already_exists_list[i].replace(re, '$2');
+groups_already_exists_list_print.push(txt);
+}
+alert('The user was already member of these users: '+groups_already_exists_list_print.join(", "));
+}
+// Remove already selected group from the master selected list
+	for (var j = 0; j < groups_already_exists_list.length; j++){
+		groups_newly_selected.splice($.inArray(groups_already_exists_list[j], groups_newly_selected),1);			
+	}
+$.each(groups_newly_selected, function(key, value) {
+var txt;
+var re = /(\d+)\s(\w+)/; 
+id = value.replace(re, '$1');
+txt = value.replace(re, '$2');
+var val = id + " " + txt;
+// Update group selected select with new entries
+     $('select#groups_selected')
+         .append($("<option></option>")         
+		 .attr("title",txt)         
+		 .attr("value", val)
+		 .text(txt));
+});
+//update array for filter with new additions
+filter_groups_selected();
+}); 
+// Remove group from selected groups box
+$('#groupRemoveBtn').click(function() { 
+if ($('select#groups_selected option:selected').length == 0) {
+return alert("Please select one or more users to remove");
+}
+$('select#groups_selected option:selected').remove();
+}); 
+});
+</script>
+<script type="text/javascript">
+//globals
+var options = [];
+var options_org_selected = [];
+var select;
+var options_selected = [];
+var select_selected;
+
+// Store data of both the select box while loading this is needed for filtering
+function filter_groups() {
+		select = document.getElementById("groups");		
+		for (var i = 0; i < select.options.length; i++) {
+			var txt = select.options[i].text;
+			options.push(txt);
+		}		
+} //end of filter_groups
+
+function filter_groups_selected() {
+		// Clear array needed in case of new additions in the selected list
+		options_selected = [];
+		select_selected = document.getElementById("groups_selected");
+		for (var i = 0; i < select_selected.options.length; i++) {
+			var txt = select_selected.options[i].text;
+			options_selected.push(txt);
+		}
+} //end of filter_groups_selected
+// Filter groups based on provided keyword .. we do search on each char on the group name
+function filter() {		
+			var keyword = document.getElementById("search").value;
+			select.innerHTML = '';
+			var keyword_regx = new RegExp(keyword.toLowerCase());			
+			// looping through all user names
+			for (var j = 0; j < options.length; j++) {
+			if (keyword_regx.test(options[j].toLowerCase())){
+					var temp = document.createElement("option");
+					temp.innerHTML = options[j];
+					select.appendChild(temp);
+				}
+			}
+} //end of filter
+		
+function filter_selected() {			
+			var keyword = document.getElementById("search_selected").value;
+			select_selected.innerHTML = '';
+			var keyword_regx = new RegExp(keyword.toLowerCase());			
+			// looping through all selected user names
+			for (var j = 0; j < options_selected.length; j++) {
+			if (keyword_regx.test(options_selected[j].toLowerCase())){
+					var temp = document.createElement("option");
+					temp.innerHTML = options_selected[j];
+					select_selected.appendChild(temp);
+				}
+			}
+} //end of filter_selected
+<!--  end jquery code   -->
+</script>
+<title>Demo</title>
+</head>
+<body>
+<table cellspacing="0" cellpadding="5" border="0" id="webiso_user_select_add_groups_all_outer">
+<tr>
+<td>
+<select name="groups" id="groups" multiple size="10" style="min-width:40mm;width:auto;">
+<option  title="User1" value="User1">User1</option>
+<option  title="User2" value="User2">User2</option>
+<option  title="User3" value="User3">User3</option>
+<option  title="User4" value="User4">User4</option>
+<option  title="User5" value="User5">User5</option>
+</select>
+   </td>
+<td width="50">
+	<input type='button' value=">>" id="groupAddBtn">
+	<br><br>
+	<input type='button' value="<<" id="groupRemoveBtn">
+</td>
+<td>
+
+<select name="groups_selected" id="groups_selected" multiple size="10" style="min-width:40mm;width:auto;">			</select>
+  </td>
+  </tr>
+</table>  
+</div>
+</body>
+</html>
+
