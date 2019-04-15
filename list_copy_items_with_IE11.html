@@ -46,8 +46,8 @@ var users_already_exists_list = [];
 //var users_newly_selected_updated  = [];
 // list of users which are already in selected list we should not copy them in selected list
 // Logic to support IE 11 because of crash as => and included are not supported
-//users_already_exists_list = users_newly_selected.filter(function(n) { return users_already_selected.indexOf(n) >=0});
-users_already_exists_list = users_newly_selected.filter((n) => users_already_selected.includes(n))
+users_already_exists_list = users_newly_selected.filter(function(n) { return users_already_selected.indexOf(n) >=0});
+//users_already_exists_list = users_newly_selected.filter((n) => users_already_selected.includes(n))
 //users_full_name_already_exists_list = users_full_name_newly_selected.filter((n) => users_full_name_already_selected.includes(n))
 //End of alternate logic to support IE11
 //warn user
